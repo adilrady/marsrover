@@ -34,12 +34,14 @@ package com.github.javadojo;
 public class MarsRover {
 
     static final String LINE_SEPARATOR = System.getProperty("line.separator");
+    private Path path;
 
-    public MarsRover(String operations) {
+    public MarsRover(String movements) {
+        path = PathFactory.creatPath(movements);
     }
 
     public String path() {
-        throw new IllegalStateException("Not implemented");
+        return path.print();
     }
 
     public MarsRover turnLeft() {

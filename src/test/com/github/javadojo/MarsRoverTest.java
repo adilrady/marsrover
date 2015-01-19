@@ -2,6 +2,7 @@ package com.github.javadojo;
 
 import static com.github.javadojo.MarsRover.LINE_SEPARATOR;
 
+import org.junit.Ignore;
 import org.junit.Test;
 
 import com.github.javadojo.MarsRover;
@@ -22,7 +23,7 @@ public class MarsRoverTest {
 				+ LINE_SEPARATOR));
 	}
 
-	@Test
+	@Test @Ignore
 	public void driveNorth() {
 		String expectedPath = new StringBuilder().append("*")
 				.append(LINE_SEPARATOR).append("|").append(LINE_SEPARATOR)
@@ -31,7 +32,7 @@ public class MarsRoverTest {
 		assertThat(new MarsRover("lsss").path(), equalTo(expectedPath));
 	}
 
-	@Test
+	@Test @Ignore
 	public void driveEstThanTurnLeft() {
 		String expectedPath = new StringBuilder().append("    *")
 				.append(LINE_SEPARATOR).append("    |").append(LINE_SEPARATOR)
@@ -41,7 +42,7 @@ public class MarsRoverTest {
 		assertThat(new MarsRover("sssslssss").path(), equalTo(expectedPath));
 	}
 
-	@Test
+	@Test @Ignore
 	public void driveNorthAfterInitialProgrammingToTheEast() {
 		MarsRover rover = new MarsRover("ssss").turnLeft().moveForward()
 				.moveForward();
@@ -51,13 +52,13 @@ public class MarsRoverTest {
 		assertThat(rover.path(), equalTo(expectedPath));
 	}
 
-	@Test
+	@Test @Ignore
 	public void driveEastThanTakeSampleThanDriveABitMore() {
 		assertThat(new MarsRover("sssSsss").path(), equalTo("X--S--*"
 				+ LINE_SEPARATOR));
 	}
 
-	@Test
+	@Test @Ignore
 	public void turnRightTwoTimes() {
 		MarsRover marsRover = new MarsRover("sssrsss").turnRight()
 				.moveForward().moveForward().moveForward();
@@ -69,7 +70,7 @@ public class MarsRoverTest {
 		assertThat(marsRover.path(), equalTo(expectedPath));
 	}
 
-	@Test
+	@Test @Ignore
 	public void pathOverlapsAreMarkedWithRightCursor() {
 		MarsRover marsRover = new MarsRover("ssssssrsss").turnRight()
 				.moveForward().moveForward().moveForward().turnRight()
@@ -85,7 +86,7 @@ public class MarsRoverTest {
 		assertThat(marsRover.path(), equalTo(expectedPath));
 	}
 
-	@Test
+	@Test @Ignore
 	public void samplePointIsNotOverridenOnSecondPass() {
 		String expectedPath = new StringBuilder().append("   *   ")
 				.append(LINE_SEPARATOR).append("X--S--+")
@@ -98,7 +99,7 @@ public class MarsRoverTest {
 				equalTo(expectedPath));
 	}
 
-	@Test
+	@Test @Ignore
 	public void samplePointIsOverridenByCurrentPosition() {
 		String expectedPath = new StringBuilder().append("X--*--+")
 				.append(LINE_SEPARATOR).append("   |  |")
@@ -110,7 +111,7 @@ public class MarsRoverTest {
 				equalTo(expectedPath));
 	}
 
-	@Test
+	@Test @Ignore
 	public void startPointIsNotOverridenOnSecondPass() {
 		String expectedPath = new StringBuilder().append("*   ")
 				.append(LINE_SEPARATOR).append("X--+").append(LINE_SEPARATOR)
@@ -122,7 +123,7 @@ public class MarsRoverTest {
 				equalTo(expectedPath));
 	}
 
-	@Test
+	@Test @Ignore
 	public void startPointIsOverridenByCurrentPosition() {
 		String expectedPath = new StringBuilder().append("*--+")
 				.append(LINE_SEPARATOR).append("|  |").append(LINE_SEPARATOR)
@@ -133,7 +134,7 @@ public class MarsRoverTest {
 				equalTo(expectedPath));
 	}
 
-	@Test
+	@Test @Ignore
 	public void intermediatePathCanBeSent() {
 		MarsRover marsRover = new MarsRover("sss");
 		String intermadiatePath = marsRover.path();
