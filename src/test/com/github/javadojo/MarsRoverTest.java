@@ -23,7 +23,7 @@ public class MarsRoverTest {
 				+ LINE_SEPARATOR));
 	}
 
-	@Test @Ignore
+	@Test
 	public void driveNorth() {
 		String expectedPath = new StringBuilder().append("*")
 				.append(LINE_SEPARATOR).append("|").append(LINE_SEPARATOR)

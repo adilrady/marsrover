@@ -18,7 +18,6 @@ public class PathFactory {
             listDirections.add(newDirection);
             currentDirection = newDirection;
         }
-        System.out.println(listDirections);
         return new Path(listDirections);
     }
     
